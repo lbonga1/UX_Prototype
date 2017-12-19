@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *interiorBackButton;
 @property (weak, nonatomic) IBOutlet UIButton *exteriorBackButton;
 @property (weak, nonatomic) IBOutlet UIButton *timeAmount;
+@property (weak, nonatomic) IBOutlet UIButton *interiorNextButton;
+@property (weak, nonatomic) IBOutlet UIButton *exteriorNextButton;
 
 @end
 
@@ -45,8 +47,14 @@
 - (IBAction)decreaseTime:(UIButton*)sender {
     if (![self.timeAmount.currentTitle isEqualToString:@"1 Month"]) {
         self.timeAmount.tag = self.timeAmount.tag - 1 ;
+        
+        self.interiorNextButton.hidden = NO;
+        self.exteriorNextButton.hidden = NO;
+        
         if ([self.timeAmount.currentTitle isEqualToString:@"2 Months"]) {
             [self.timeAmount setTitle:@"1 Month" forState:UIControlStateNormal];
+            self.interiorBackButton.hidden = YES;
+            self.exteriorBackButton.hidden = YES;
         } else {
             NSString *timeString = [NSString stringWithFormat:@"%ld Months", (long)self.timeAmount.tag];
             [self.timeAmount setTitle:timeString forState:UIControlStateNormal];
@@ -57,8 +65,15 @@
 - (IBAction)increaseTime:(UIButton*)sender {
     if (![self.timeAmount.currentTitle isEqualToString:@"1 Year"]) {
         self.timeAmount.tag = self.timeAmount.tag + 1;
+        
+        self.interiorBackButton.hidden = NO;
+        self.exteriorBackButton.hidden = NO;
+        
         if ([self.timeAmount.currentTitle isEqualToString:@"11 Months"]) {
             [self.timeAmount setTitle:@"1 Year" forState:UIControlStateNormal];
+            
+            self.interiorNextButton.hidden = YES;
+            self.exteriorNextButton.hidden = YES;
         } else {
             NSString *timeString = [NSString stringWithFormat:@"%ld Months", (long)self.timeAmount.tag];
             [self.timeAmount setTitle:timeString forState:UIControlStateNormal];
@@ -80,8 +95,11 @@
         textField.secureTextEntry = YES;
     }];
     
-    UIAlertAction *done = [UIAlertAction actionWithTitle:@"Done" style:UIAlertActionStyleDefault handler:nil];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     
+    UIAlertAction *done = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alert addAction:cancel];
     [alert addAction:done];
     [self presentViewController:alert animated:YES completion:nil];
 }

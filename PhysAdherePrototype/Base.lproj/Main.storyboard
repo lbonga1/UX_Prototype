@@ -1291,7 +1291,7 @@ Login</string>
                                                             <color key="titleColor" red="0.19215686269999999" green="0.19215686269999999" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFu-jT-s3v">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RFu-jT-s3v">
                                                         <rect key="frame" x="231" y="23.5" width="16" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="16" id="P8y-fp-BV7"/>
@@ -1324,7 +1324,7 @@ Login</string>
                                                             <action selector="increaseTime:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j8X-90-veq"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwF-Rn-mAE">
+                                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwF-Rn-mAE">
                                                         <rect key="frame" x="221" y="23.5" width="16" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="16" id="8DL-ou-TDm"/>
@@ -1473,7 +1473,9 @@ Login</string>
                     <connections>
                         <outlet property="containerView" destination="Sqm-9F-SAj" id="PYs-ed-wyr"/>
                         <outlet property="exteriorBackButton" destination="hwF-Rn-mAE" id="hdi-eG-Roz"/>
+                        <outlet property="exteriorNextButton" destination="iD1-Q3-aYb" id="Oc4-8w-b2C"/>
                         <outlet property="interiorBackButton" destination="RFu-jT-s3v" id="Wgz-HM-8CH"/>
+                        <outlet property="interiorNextButton" destination="gFf-aj-EKF" id="hcb-9z-yD8"/>
                         <outlet property="timeAmount" destination="NO6-jw-Ms2" id="zxb-ym-y3e"/>
                     </connections>
                 </viewController>
